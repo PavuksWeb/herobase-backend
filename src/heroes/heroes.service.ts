@@ -15,6 +15,7 @@ export class HeroesService {
   }
 
   async createHero(data: Prisma.HeroCreateInput): Promise<Hero> {
+    console.log(data);
     return this.databaseService.hero.create({ data });
   }
 
