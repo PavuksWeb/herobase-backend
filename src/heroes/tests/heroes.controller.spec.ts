@@ -80,7 +80,12 @@ describe('HeroesController', () => {
 
   describe('createHero', () => {
     it('should create a hero', async () => {
-      const dto: Prisma.HeroCreateInput = { nickname: 'Superman' } as any;
+      const dto: Prisma.HeroCreateInput = {
+        nickname: 'Superman',
+        real_name: 'Clark Kent',
+        origin_description: 'An alien from Krypton who protects Earth.',
+        catch_phrase: 'Up, up, and away!',
+      };
       const created: Hero = {
         id: 2,
         nickname: 'Superman',
@@ -103,7 +108,7 @@ describe('HeroesController', () => {
     it('should update a hero', async () => {
       const dto: Prisma.HeroUpdateInput = {
         nickname: { set: 'Ironman' },
-      } as any;
+      };
       const updated: Hero = {
         id: 1,
         nickname: 'Ironman',
